@@ -10,8 +10,10 @@ DEFAULT_TEXT_OFFSET = 4
 
 # IMAGE_BRICK = os.path.join(os.getcwd(), "./batter/assets/brick-3.png")
 # IMAGE_BRICK_RED = os.path.join(os.getcwd(), "./batter/assets/brick-2.png")
-IMAGE_PADDLE = os.path.join(os.getcwd(), "./fish-jump/assets/fish.jpg")
-IMAGE_BALL = os.path.join(os.getcwd(), "./batter/assets/ball.png")
+IMAGE_SEAWEED = os.path.join(
+    os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/seaweed.png")
+IMAGE_FISH = os.path.join(
+    os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/fish3.png")
 
 # SOUND_START = os.path.join(os.getcwd(), "./batter/assets/start.wav")
 # SOUND_BOUNCE = os.path.join(os.getcwd(), "./batter/assets/boing.wav")
@@ -36,5 +38,5 @@ FISH_SPEED = 15
 PADDLE_WIDTH = 96
 PADDLE_HEIGHT = 24
 
-BALL_WIDTH = 24
-BALL_HEIGHT = 24
+BALL_WIDTH = 100
+BALL_HEIGHT = 100

@@ -32,7 +32,7 @@ def main():
     cast["fish"] = []
     fishes = []
 
-    position_fish = Point(400, 450)
+    position_fish = Point(100, 250)
     fish = Fish()
     fish.set_position(position_fish)
     fishes.append(fish)
@@ -54,7 +54,7 @@ def main():
 
     input_service = InputService()
     output_service = OutputService()
-    physics_service = PhysicsService()
+    # physics_service = PhysicsService()
     audio_service = AudioService()
     move_actors_action = MoveActorsAction()
     # handle_off_screen_action = HandleOffScreenAction(physics_service)

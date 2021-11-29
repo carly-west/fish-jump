@@ -32,20 +32,24 @@ class InputService:
         dx = 0
         dy = 0
 
-        if self.is_left_pressed():
-            dx = -1
+        if self.is_up_pressed():
+            dy = -1
 
-        if self.is_right_pressed():
-            dx = 1
+        if self.is_down_pressed():
+            dy = 1
 
         direction = Point(dx, dy)
         return direction
 
-    def is_left_pressed(self):
-        return raylibpy.is_key_down(raylibpy.KEY_LEFT)
+    def is_up_pressed(self):
+        return raylibpy.is_key_down(raylibpy.KEY_UP)
 
-    def is_right_pressed(self):
-        return raylibpy.is_key_down(raylibpy.KEY_RIGHT)
+    def is_down_pressed(self):
+        return raylibpy.is_key_down(raylibpy.KEY_DOWN)
+
+    def is_space_pressed(self):
+
+        return raylibpy.is_key_down(raylibpy.KEY_SPACE)
 
     def window_should_close(self):
         return raylibpy.window_should_close()
