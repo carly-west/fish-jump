@@ -22,21 +22,16 @@ class HandleOffScreenAction(Action):
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """
-        ball = cast["ball"][0]
+        submarine = cast["submarine"][0]
+        # seaweed = cast["seaweed"]
 
-        position = ball.get_position()
-        x = position.get_x()
-        y = position.get_y()
-        x_vel = ball._velocity.get_x()
-        y_vel = ball._velocity.get_y()
+        sub_position = submarine.get_position()
+        x_sub = sub_position.get_x()
+        y_sub = sub_position.get_y()
+        y_vel_sub = submarine._velocity.get_y()
+        x_vel_sub = submarine._velocity.get_x()
 
-        if x == 776 or x == 0:
-            x_vel = x_vel * -1
+        if x_sub < -200:
+            x_sub = 800
 
-        if y in range(575, 578):
-            y_vel = y_vel * -1
-
-        elif y in range(0, 4):
-            y_vel = y_vel * -1
-
-        ball.set_velocity(Point(x_vel, y_vel))
+        submarine.set_position(Point(x_sub, y_sub))

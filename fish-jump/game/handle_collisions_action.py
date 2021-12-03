@@ -2,6 +2,7 @@ import random
 from game import constants
 from game.action import Action
 from game.point import Point
+from game.lives import Lives
 
 
 class HandleCollisionsAction(Action):
@@ -22,53 +23,28 @@ class HandleCollisionsAction(Action):
             Args:
                 cast (dict): The game actors {key: tag, value: list}.
             """
-        ball = cast["balls"][0]  # there's only one
-        paddle = cast["paddle"][0]  # there's only one
-        bricks = cast["bricks"]
+        submarine = cast["submarine"][0]
+        # seaweed = cast["seaweed"]
+        fish = cast["fish"][0]
+        life = cast["life"][0]
 
-        ball_position = ball.get_position()
-        ball_x = ball_position.get_x()
-        ball_y = ball_position.get_y()
+        # if self._physics_service.is_collision(fish, submarine):
+        #     print("CRASH")
 
-        x_vel = ball._velocity.get_x()
-        y_vel = ball._velocity.get_y()
+        sub_position = submarine.get_position()
+        x_sub = sub_position.get_x()
+        y_sub = sub_position.get_y()
 
-        paddle_position = paddle.get_position()
-        paddle_x = paddle_position.get_x()
-        paddle_y = paddle_position.get_y()
+        fish_position = fish.get_position()
+        x_fish = fish_position.get_x()
+        y_fish = fish_position.get_y()
 
-        if ball_x + 12 in range(paddle_x, paddle_x + 96) and ball_y + 24 in range(paddle_y, paddle_y + 24):
-            y_vel = y_vel * -1
+        if x_fish + 70 in range(x_sub, x_sub + 129) and y_fish in range(y_sub, y_sub + 200):
+            submarine.set_position(Point(0, 850))
+            life.lose_lives(1)
+            print(life.get_text)
 
-            self._audio_service.play_sound(constants.SOUND_BOUNCE)
+        is_game_over = life.is_no_lives()
 
-            ball.set_velocity(Point(x_vel, y_vel))
-
-        for brick in bricks:
-            position = brick.get_position()
-            brick_x = position.get_x()
-            brick_y = position.get_y()
-
-            # if ball_x in range(brick_x, )
-            if ball_x in range(brick_x, brick_x + 48) and ball_y in range(brick_y, brick_y + 24):
-
-                if ball_x in range(brick_x + 48, brick_y - 24):
-                    x_vel = x_vel * -1
-
-                elif ball_x + 24 in range(brick_x, brick_y - 24):
-                    x_vel = x_vel * -1
-
-                # elif ball_x + 24 in range(brick_x, brick_y + 48):
-                #     y_vel = y_vel * -1
-                else:
-                    y_vel = y_vel * -1
-
-                ball.set_velocity(Point(x_vel, y_vel))
-                bricks.pop(bricks.index(brick))
-
-                self._audio_service.play_sound(constants.SOUND_BOUNCE)
-
-                # if ball_position.get_
-
-                # if ball_y - 24 <= 0:
-                #     print("GAME OVER")
+        if is_game_over:
+            print("YOU LOSE")

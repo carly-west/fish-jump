@@ -2,9 +2,10 @@ import sys
 from game import constants
 import raylibpy
 
+
 class OutputService:
     """Outputs the game state. The responsibility of the class of objects is to draw the game state on the terminal. 
-    
+
     Stereotype: 
         Service Provider
 
@@ -14,7 +15,7 @@ class OutputService:
 
     def __init__(self):
         """The class constructor.
-        
+
         Args:
             self (OutputService): An instance of OutputService.
         """
@@ -26,15 +27,15 @@ class OutputService:
         """
         raylibpy.init_window(constants.MAX_X, constants.MAX_Y, title)
         raylibpy.set_target_fps(constants.FRAME_RATE)
-        
+
     def clear_screen(self):
         """Clears the Asciimatics buffer in preparation for the next rendering.
 
         Args:
             self (OutputService): An instance of OutputService.
-        """ 
+        """
         raylibpy.begin_drawing()
-        raylibpy.clear_background(raylibpy.BLACK)
+        raylibpy.clear_background()
 
     def draw_box(self, x, y, width, height):
         """
@@ -51,7 +52,8 @@ class OutputService:
         if is_dark_text:
             color = raylibpy.BLACK
 
-        raylibpy.draw_text(text, x + 5, y + 5, constants.DEFAULT_FONT_SIZE, color)
+        raylibpy.draw_text(text, x + 5, y + 5,
+                           constants.DEFAULT_FONT_SIZE, color)
 
     def draw_image(self, x, y, image):
         """
@@ -71,7 +73,7 @@ class OutputService:
         Args:
             self (OutputService): An instance of OutputService.
             actor (Actor): The actor to render.
-        """ 
+        """
         position = actor.get_position()
         x = position.get_x()
         y = position.get_y()
@@ -87,21 +89,21 @@ class OutputService:
             self.draw_text(x, y, text, True)
         elif width > 0 and height > 0:
             self.draw_box(x, y, width, height)
-        
+
     def draw_actors(self, actors):
         """Renders the given list of actors on the screen.
 
         Args:
             self (OutputService): An instance of OutputService.
             actors (list): The actors to render.
-        """ 
+        """
         for actor in actors:
             self.draw_actor(actor)
-    
+
     def flush_buffer(self):
         """Renders the screen.
 
         Args:
             self (OutputService): An instance of OutputService.
-        """ 
+        """
         raylibpy.end_drawing()
