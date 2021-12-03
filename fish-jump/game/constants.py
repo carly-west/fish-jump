@@ -5,16 +5,18 @@ MAX_Y = 600
 FRAME_RATE = 30
 
 DEFAULT_SQUARE_SIZE = 20
-DEFAULT_FONT_SIZE = 20
+DEFAULT_FONT_SIZE = 40
 DEFAULT_TEXT_OFFSET = 4
 
 # IMAGE_BRICK = os.path.join(os.getcwd(), "./batter/assets/brick-3.png")
 # IMAGE_BRICK_RED = os.path.join(os.getcwd(), "./batter/assets/brick-2.png")
 
 IMAGE_BACKGROUND = os.path.join(
-    os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/ocean.png")
+    os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/ocean2.png")
+IMAGE_LOST = os.path.join(
+    os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/submarine.png")
 IMAGE_SEAWEED = os.path.join(
-    os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/seaweed-big.png")
+    os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/seaweed.png")
 IMAGE_FISH = os.path.join(
     os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/fish3.png")
 
@@ -28,6 +30,9 @@ IMAGE_SUBMARINE = os.path.join(
 
 SEAWEED_X = MAX_X / 2
 SEAWEED_Y = MAX_Y - 125
+
+BACKGROUND_X = MAX_X / 2
+BACKGROUND_Y = MAX_Y - 125
 
 SEAWEED_DX = 8
 SEAWEED_DY = SEAWEED_DX * -1

@@ -22,16 +22,19 @@ class HandleOffScreenAction(Action):
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """
-        submarine = cast["submarine"][0]
-        # seaweed = cast["seaweed"]
 
-        sub_position = submarine.get_position()
-        x_sub = sub_position.get_x()
-        y_sub = sub_position.get_y()
-        y_vel_sub = submarine._velocity.get_y()
-        x_vel_sub = submarine._velocity.get_x()
+        submarines = cast["submarine"]
+        for submarine in submarines:
 
-        if x_sub < -200:
-            x_sub = 800
+            # seaweed = cast["seaweed"]
 
-        submarine.set_position(Point(x_sub, y_sub))
+            sub_position = submarine.get_position()
+            x_sub = sub_position.get_x()
+            y_sub = sub_position.get_y()
+            y_vel_sub = submarine._velocity.get_y()
+            x_vel_sub = submarine._velocity.get_x()
+
+            if x_sub < -200:
+                x_sub = 800
+
+            submarine.set_position(Point(x_sub, y_sub))

@@ -30,7 +30,7 @@ def main():
     cast["background"] = []
     backgrounds = []
 
-    position_background = Point(0, 0)
+    position_background = Point(1, 1)
     background = Background()
     background.set_position(position_background)
     backgrounds.append(background)
@@ -64,12 +64,12 @@ def main():
 
     for spot in range(2):
         random_num = random.randint(300, 500)
-        position_seaweed = Point(random_num * spot, 350)
+        position_seaweed = Point(random_num * spot, 330)
         seaweed = Seaweed()
         seaweed.set_position(position_seaweed)
         seaweeds.append(seaweed)
 
-    cast["seaweeds"] = seaweeds
+        cast["seaweeds"] = seaweeds
 
     # Submarine
 

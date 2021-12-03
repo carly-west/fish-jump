@@ -50,3 +50,6 @@ class Lives(Actor):
             return True
         else:
             return False
+
+    def set_words(self, text):
+        self.set_text(text)
