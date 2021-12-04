@@ -10,7 +10,7 @@ class Seaweed(Actor):
         self.set_width = constants.SEAWEED_WIDTH
         self.set_image(constants.IMAGE_SEAWEED)
         # self._brick_space = constants.BRICK_SPACE
-        self._velocity = Point(-9, 0)
+        self._velocity = Point(-3, 0)
         # -3
 
     def set_position(self, position):
