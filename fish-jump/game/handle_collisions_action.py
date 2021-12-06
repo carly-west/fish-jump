@@ -36,7 +36,9 @@ class HandleCollisionsAction(Action):
         fishes = cast["fish"]
         life = cast["life"]
         seaweed = cast["seaweeds"]
+        foods = cast["food"]
         lose_life = False
+        add_life = False
 
         # if self._physics_service.is_collision(fish, submarine):
         #     print("CRASH")
@@ -69,10 +71,24 @@ class HandleCollisionsAction(Action):
                     fish.set_position(Point(100, 250))
                     lose_life = True
 
+            for food in foods:
+                food_position = food.get_position()
+                x_food = food_position.get_x()
+                y_food = food_position.get_y()
+
+                if x_fish + 70 in range(x_food, x_food + 33) and y_fish + 57 in range(y_food, y_food + 50):
+                    food.set_position(Point(0, 850))
+                    add_life = True
+
             if lose_life:
                 for lives in life:
                     lives.lose_lives(1)
                     lose_life = False
+
+            if add_life:
+                for lives in life:
+                    lives.add_lives(1)
+                    add_life = False
 
             for lives in life:
                 is_game_over = lives.is_no_lives()

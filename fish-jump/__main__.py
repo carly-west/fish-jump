@@ -11,6 +11,7 @@ from game.control_actors_action import ControlActorsAction
 from game.move_actors_action import MoveActorsAction
 from game.draw_actors_action import DrawActorsAction
 from game.fish import Fish
+from game.food import Food
 from game.point import Point
 from game.actor import Actor
 from game.director import Director
@@ -27,6 +28,8 @@ def main():
     # create the cast {key: tag, value: list}
     cast = {}
 
+    # Background
+
     cast["background"] = []
     backgrounds = []
 
@@ -36,6 +39,16 @@ def main():
     backgrounds.append(background)
 
     cast["background"] = backgrounds
+
+    # Sets up food
+    cast["food"] = []
+    foods = []
+
+    food = Food()
+    foods.append(food)
+
+    cast["food"] = foods
+    print(foods)
 
     # Sets up lives
     cast["life"] = []
@@ -76,11 +89,7 @@ def main():
     submarines = []
 
     for spot in range(1):
-        # Submarine isn't going to random spot
-        random_num2 = random.randint(0, 300)
-        position_submarine = Point(0, random_num2)
         submarine = Submarine()
-        submarine.set_position(position_submarine)
         submarines.append(submarine)
 
     cast["submarine"] = submarines

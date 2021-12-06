@@ -24,17 +24,26 @@ class HandleOffScreenAction(Action):
         """
 
         submarines = cast["submarine"]
-        for submarine in submarines:
+        foods = cast["food"]
 
-            # seaweed = cast["seaweed"]
+        for food in foods:
+
+            food_position = food.get_position()
+            x_food = food_position.get_x()
+            y_food = food_position.get_y()
+
+            if x_food <= 5:
+                y_food = random.randint(0, 450)
+
+                food.set_position(Point(1000, y_food))
+
+        for submarine in submarines:
 
             sub_position = submarine.get_position()
             x_sub = sub_position.get_x()
             y_sub = sub_position.get_y()
-            y_vel_sub = submarine._velocity.get_y()
-            x_vel_sub = submarine._velocity.get_x()
 
-            if x_sub < -200:
-                x_sub = 800
+            if x_sub <= 0:
+                y_sub = random.randint(0, 450)
 
-            submarine.set_position(Point(x_sub, y_sub))
+                submarine.set_position(Point(1000, y_sub))

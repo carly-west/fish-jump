@@ -19,7 +19,8 @@ IMAGE_SEAWEED = os.path.join(
     os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/seaweed.png")
 IMAGE_FISH = os.path.join(
     os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/fish3.png")
-
+IMAGE_FOOD = os.path.join(
+    os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/food.png")
 IMAGE_SUBMARINE = os.path.join(
     os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/submarine2.png")
 
@@ -34,17 +35,6 @@ SEAWEED_Y = MAX_Y - 125
 BACKGROUND_X = MAX_X / 2
 BACKGROUND_Y = MAX_Y - 125
 
-SEAWEED_DX = 8
-SEAWEED_DY = SEAWEED_DX * -1
-
-SUBMARINE_X = MAX_X / 2
-SUBMARINE_Y = MAX_Y - 25
-
-BRICK_WIDTH = 48
-BRICK_HEIGHT = 24
-
-BRICK_SPACE = 5
-
 FISH_SPEED = 15
 
 FISH_WIDTH = 70
@@ -55,3 +45,7 @@ SEAWEED_HEIGHT = 150
 
 SUBMARINE_WIDTH = 200
 SUBMARINE_HEIGHT = 129
+
+
+FOOD_WIDTH = 50
+FOOD_HEIGHT = 33

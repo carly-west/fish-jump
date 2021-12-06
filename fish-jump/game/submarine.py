@@ -9,8 +9,8 @@ class Submarine(Actor):
         self.set_height = constants.SUBMARINE_WIDTH
         self.set_width = constants.SUBMARINE_WIDTH
         self.set_image(constants.IMAGE_SUBMARINE)
-        # self._brick_space = constants.BRICK_SPACE
         self._velocity = Point(-5, 0)
+        self._position = Point(0, 200)
 
     def set_position(self, position):
         self._position = position
