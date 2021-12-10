@@ -51,10 +51,14 @@ class HandleCollisionsAction(Action):
                 y_fish = fish_position.get_y()
 
             for submarine in submarines:
+                
+
 
                 sub_position = submarine.get_position()
                 x_sub = sub_position.get_x()
                 y_sub = sub_position.get_y()
+
+
 
             lose_life = False
 
@@ -100,6 +104,9 @@ class HandleCollisionsAction(Action):
                     fishes.clear()
                 for sub in submarines:
                     submarines.clear()
+                for fish in foods:
+                    foods.clear()
+
                 for lives in life:
                     lives.set_words("YOU LOST!")
                     lives.set_position(Point(375, 250))

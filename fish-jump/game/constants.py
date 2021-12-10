@@ -25,7 +25,7 @@ IMAGE_SUBMARINE = os.path.join(
     os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/submarine2.png")
 
 
-# SOUND_START = os.path.join(os.getcwd(), "./batter/assets/start.wav")
+SOUND_START = os.path.join(os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/song3.wav")
 # SOUND_BOUNCE = os.path.join(os.getcwd(), "./batter/assets/boing.wav")
 # SOUND_OVER = os.path.join(os.getcwd(), "./batter/assets/over.wav")
 

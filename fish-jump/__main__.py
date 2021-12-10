@@ -75,7 +75,7 @@ def main():
     # OBSTACLES
     seaweeds = []
 
-    for spot in range(2):
+    for spot in range(3):
         random_num = random.randint(300, 500)
         position_seaweed = Point(random_num * spot, 330)
         seaweed = Seaweed()
@@ -120,13 +120,12 @@ def main():
     # Start the game
     output_service.open_window("fish-jump")
     audio_service.start_audio()
-    # audio_service.play_sound(constants.SOUND_START)
+    audio_service.play_sound(constants.SOUND_START)
 
     director = Director(cast, script)
     director.start_game()
 
     audio_service.stop_audio()
-
 
 if __name__ == "__main__":
     main()
