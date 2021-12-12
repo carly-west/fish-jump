@@ -48,7 +48,6 @@ def main():
     foods.append(food)
 
     cast["food"] = foods
-    print(foods)
 
     # Sets up lives
     cast["life"] = []
@@ -108,14 +107,12 @@ def main():
     handle_collisions_action = HandleCollisionsAction(
         physics_service, audio_service)
 
-    # TODO: Create additional actions here and add them to the script
 
     script["input"] = [control_actors_action]
     script["update"] = [move_actors_action,
                         handle_off_screen_action, handle_collisions_action]
     script["output"] = [draw_actors_action]
 
-# , handle_collisions_action
 
     # Start the game
     output_service.open_window("fish-jump")

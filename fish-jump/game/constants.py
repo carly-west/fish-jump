@@ -26,8 +26,9 @@ IMAGE_SUBMARINE = os.path.join(
 
 
 SOUND_START = os.path.join(os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/song3.wav")
-# SOUND_BOUNCE = os.path.join(os.getcwd(), "./batter/assets/boing.wav")
-# SOUND_OVER = os.path.join(os.getcwd(), "./batter/assets/over.wav")
+SOUND_FOOD = os.path.join(os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/foodeat2.wav")
+SOUND_HIT = os.path.join(os.getcwd(), "/Users/carlywest/Desktop/fish-jump/fish-jump/assets/die2.wav")
+
 
 SEAWEED_X = MAX_X / 2
 SEAWEED_Y = MAX_Y - 125

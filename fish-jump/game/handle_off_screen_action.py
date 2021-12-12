@@ -25,6 +25,7 @@ class HandleOffScreenAction(Action):
 
         submarines = cast["submarine"]
         foods = cast["food"]
+                
 
         for food in foods:
 

@@ -51,9 +51,6 @@ class HandleCollisionsAction(Action):
                 y_fish = fish_position.get_y()
 
             for submarine in submarines:
-                
-
-
                 sub_position = submarine.get_position()
                 x_sub = sub_position.get_x()
                 y_sub = sub_position.get_y()
@@ -63,7 +60,9 @@ class HandleCollisionsAction(Action):
             lose_life = False
 
             if x_fish + 70 in range(x_sub, x_sub + 129) and y_fish + 57 in range(y_sub, y_sub + 200):
-                submarine.set_position(Point(0, 850))
+                y_sub = random.randint(0, 450)
+
+                submarine.set_position(Point(1000, y_sub))
                 lose_life = True
 
             for weed in seaweed:
@@ -80,16 +79,19 @@ class HandleCollisionsAction(Action):
                 x_food = food_position.get_x()
                 y_food = food_position.get_y()
 
-                if x_fish + 70 in range(x_food, x_food + 33) and y_fish + 57 in range(y_food, y_food + 50):
-                    food.set_position(Point(0, 850))
+                if x_fish + 50 in range(x_food, x_food + 33) and y_fish + 57 in range(y_food, y_food + 50):
+                    y_food = random.randint(0, 450)
+                    food.set_position(Point(1000, y_food))
                     add_life = True
 
             if lose_life:
+                self._audio_service.play_sound(constants.SOUND_HIT)
                 for lives in life:
                     lives.lose_lives(1)
                     lose_life = False
 
             if add_life:
+                self._audio_service.play_sound(constants.SOUND_FOOD)
                 for lives in life:
                     lives.add_lives(1)
                     add_life = False
@@ -98,6 +100,7 @@ class HandleCollisionsAction(Action):
                 is_game_over = lives.is_no_lives()
 
             if is_game_over:
+
                 for weed in seaweed:
                     seaweed.clear()
                 for fish in fishes:
@@ -110,3 +113,9 @@ class HandleCollisionsAction(Action):
                 for lives in life:
                     lives.set_words("YOU LOST!")
                     lives.set_position(Point(375, 250))
+
+
+
+                    
+
+
